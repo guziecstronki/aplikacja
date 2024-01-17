@@ -1,0 +1,315 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    background-color: #131313;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+canvas{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 21%;
+    /* transform: translateX(-50%); */
+    width: 58%;
+}
+
+.console{
+    background-color: lightcyan;
+    width: 85vw;
+    height: 40vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3vw;
+}
+.main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.display{
+    background-image: url('/IMGS/tapeta.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 55%;
+    height: 75%;
+}
+.off{
+    background-image: url('/IMGS/off.png');
+}
+.on{
+    display: block;
+    position: absolute;
+    width: 85vw;
+    height: 100%;
+}
+.menu{
+    width: 100%;
+    height: 2vw;
+    background: rgba(255, 255, 255, 0.75);
+    display: none;
+    justify-content: flex-end;
+}
+.width-of-content{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.wi-fi{
+    width: 20%;
+    display: flex;
+    justify-content: end;
+}
+.rectangle{
+    background-color: white;
+    width: 0.5vw;
+    height: 1vw;
+}
+.rectangle::before{
+    position: relative;
+    display: block;
+    left: -0.6vw;
+    top: 0;
+    content: '';
+    background-color: white;
+    width: 0.5vw;
+    height: 0.75vw;
+    top: 25%;
+}
+.rectangle::after{
+    position: relative;
+    display: block;
+    left: -1.15vw;
+    top: 0;
+    content: '';
+    background-color: white;
+    width: 0.5vw;
+    height: 0.5vw;
+    top: -25%;
+}
+.clock{
+    width: 20%;
+    font-size: 1.2vw;
+}
+.batery{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35%;
+}
+.batery p{
+    font-size: 1.2vw;
+}
+.batery-display{
+    --percents: 100%;
+    --color: green;
+    width: 50%;
+    height: 1.5vw;
+    background: linear-gradient(90deg,  var(--color) var(--percents), transparent var(--percents));
+    border: 0.01vw solid black;
+}
+.batery-display::after{
+    position: relative;
+    left: 102%;
+    top: 25%;
+    height: 50%;
+    display: block;
+    content: '';
+    background-color: black;
+    width: 10%;
+}
+
+.game{
+    width: 5vw;
+    height: 5vw;
+    background-image: url('/IMGS/thepoop-miniaturka.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 1vw;
+    border-radius: 1vw;
+    display: none;
+}
+.game:hover{
+    transform: scale(1.05);
+}
+
+.progressBar{
+    --percents: 0%;
+    display: none;
+    position: relative;
+    top: 80%;
+    left: 25%;
+    width: 50%;
+    height: 3vw;
+    background: linear-gradient(90deg, teal var(--percents), transparent var(--percents));
+    border: 0.2vw solid green;
+    z-index: 1;
+}
+.slider-container {
+    width: 46.7vw;
+    height: 30vw;
+    overflow: hidden;
+    display: none;
+    position: absolute;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.slide {
+    flex: 0 0 100%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+.startButton{
+    position: relative;
+    top: 80%;
+    left: 45%;
+    width: 10%;
+    height: 3vw;
+    background-color: rgb(185, 219, 66);
+    z-index: 1;
+    font-size: 1vw;
+}
+
+.buttons{
+    height: 50%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.wsad{
+    order: -1;
+}
+.space{
+    width: 4vw;
+    height: 4vw;
+}
+.button{
+    width: 4vw;
+    height: 4vw;
+    border-radius: 60%;
+    border: .2vw solid black;
+    box-shadow: 0px .5vw .1vw .2vw black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    color: rgb(241, 241, 241);
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); 
+}
+.w{
+    background-color: yellow;
+}
+.a{
+    background-color: blue;
+}
+.s{
+    background-color: green;
+}
+.d{
+    background-color: red;
+}
+.up, .left, .right, .down{
+    background-color: rgb(46, 46, 46);
+}
+.left-right{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.arrows{
+    order: 1;
+}
+.start{
+    width: 5vw;
+    height: 2vw;
+    background-color: rgb(212, 73, 73);
+    border: 1px solid black;
+    font-weight: 900;
+    box-shadow: 0px 2px 1px 1px black;
+    color: white;
+    border-radius: 10px;
+    font-size: 1vw;
+}
+
+.triangle {
+    position: relative;
+    top: -0.2vw;
+    width: 0;
+    height: 0;
+    border-left: 1.2vw solid transparent;
+    border-right: 1.2vw solid transparent;
+    border-bottom: 2.3vw solid rgb(0, 255, 47);
+}
+
+.triangle::before {
+    content: '';
+    position: absolute;
+    top: 0.45vw;
+    left: -0.8vw;
+    width: 0;
+    height: 0;
+    border-left: 0.8vw solid transparent;
+    border-right: 0.8vw solid transparent;
+    border-bottom: 1.7vw solid rgb(46, 46, 46);
+}
+
+.cross {
+    position: relative;
+    top: 0.5vw;
+    width: 2.5vw;
+    height: 1.5vw;
+}
+
+.cross::before,
+.cross::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background-color: rgb(41, 82, 220);
+}
+
+.cross::before {
+    transform: rotate(-45deg);
+}
+
+.cross::after {
+    transform: rotate(45deg);
+}
+
+.square{
+    width: 1.3vw;
+    height: 1.3vw;
+    border: 0.4vw solid rgb(155, 53, 213);
+}
+.circle{
+    width: 1.5vw;
+    height: 1.5vw;
+    border: 0.4vw solid rgb(212, 37, 37);
+    border-radius: 50%;
+}
+.pressed{
+    box-shadow: 0px .4vw .1vw .3vw black;
+    transform: translateY(3%);
+}
