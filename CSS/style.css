@@ -37,14 +37,14 @@ canvas{
     height: 100%;
 }
 .display{
-    background-image: url('/IMGS/tapeta.jpg');
+    background-image: url('../IMGS/tapeta.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     width: 55%;
     height: 75%;
 }
 .off{
-    background-image: url('/IMGS/off.png') !important;
+    background-image: url('../IMGS/off.png') !important;
 }
 .on{
     display: block;
@@ -132,7 +132,7 @@ canvas{
 .game{
     width: 5vw;
     height: 5vw;
-    background-image: url('/IMGS/Slide2.png');
+    background-image: url('../IMGS/Slide2.png');
     background-size: cover;
     background-repeat: no-repeat;
     margin: 1vw;

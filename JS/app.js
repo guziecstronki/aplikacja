@@ -119,10 +119,10 @@ startGame.addEventListener('click', function() {
     addCanvas.setAttribute('id', 'canvas')
     displayConsole.appendChild(addCanvas)
     const script = document.createElement('script');
-    script.src = 'JS/scrtipt.js';
+    script.src = './JS/scrtipt.js';
     script.async = true;
     document.head.appendChild(script);
     displayConsole.classList.remove('off')
-    displayConsole.style.backgroundImage = "url('/img/tlo.jpg')"
+    displayConsole.style.backgroundImage = "url('./img/tlo.jpg')"
 })
 

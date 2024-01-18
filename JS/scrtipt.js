@@ -1,12 +1,12 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d')
 let tlo = new Image()
-tlo.src = '../img/toaleta5.jpg';
+tlo.src = './img/toaleta5.jpg';
 const getHeight = () => window.innerHeight;
 const getWidth = () => window.innerWidth;
 
 setInterval(() => {
-    tlo.src = '../img/toaleta5.jpg';
+    tlo.src = './img/toaleta5.jpg';
 }, 10000)
 
 // wysokosc i szerokosc w pixelach
@@ -62,7 +62,7 @@ let heightu1 = 4
 let moveUser1
 
 let postac1 = new Image()
-postac1.src = '../img/postac1S.png'
+postac1.src = './img/postac1S.png'
 
 let postac1Zwrot
 let postac1Ruch1P
@@ -77,11 +77,11 @@ const user1Draw = () => {
         clearInterval(postac1Ruch2L)
         postac1Ruch2L = null
         postac1Ruch1P = setInterval(() =>{
-            postac1.src = '../img/postac1P1.png'
+            postac1.src = './img/postac1P1.png'
         }, 256)
         setTimeout(() => {
             postac1Ruch2P = setInterval(() =>{
-            postac1.src = '../img/postac1P2.png'
+            postac1.src = './img/postac1P2.png'
         }, 256)
         }, 128)
         widthu1 = 2
@@ -92,21 +92,21 @@ const user1Draw = () => {
         clearInterval(postac1Ruch2P)
         postac1Ruch2P = null
         postac1Ruch1L = setInterval(() =>{
-            postac1.src = '../img/postac1L1.png'
+            postac1.src = './img/postac1L1.png'
         }, 256)
         setTimeout(() => {
             postac1Ruch2L= setInterval(() =>{
-            postac1.src = '../img/postac1L2.png'
+            postac1.src = './img/postac1L2.png'
         }, 256)
         }, 128)
         widthu1 = 2
         heightu1 = 4
     }  else if (!isShottingUser1){
         if(lastKeyR){
-            postac1.src = '../img/postac1ShotP.png'
+            postac1.src = './img/postac1ShotP.png'
         }
         if(lastKeyL){
-            postac1.src = '../img/postac1ShotL.png'
+            postac1.src = './img/postac1ShotL.png'
         }
         widthu1 = 3
         heightu1 = 4
@@ -119,7 +119,7 @@ const user1Draw = () => {
         postac1Ruch1L = null
         clearInterval(postac1Ruch2L)
         postac1Ruch2L = null
-        postac1.src = '../img/postac1S.png'
+        postac1.src = './img/postac1S.png'
         widthu1 = 2
         heightu1 = 4
     }
@@ -148,7 +148,7 @@ document.addEventListener('keydown', (e) => {
             lastKeyL = true
         }
         if(postac1Zwrot == 'spoczynek'){
-            postac1.src = '../img/postac1L1.png'
+            postac1.src = './img/postac1L1.png'
         }
         postac1Zwrot = false
     } else if(e.key == 'ArrowRight'){
@@ -161,7 +161,7 @@ document.addEventListener('keydown', (e) => {
             lastKeyL = false
         }
         if(postac1Zwrot == 'spoczynek'){
-            postac1.src = '../img/postac1P1.png'
+            postac1.src = './img/postac1P1.png'
         }
         postac1Zwrot = true
     }
@@ -277,7 +277,7 @@ let moveUser2
 
 
 let postac2 = new Image()
-postac2.src = '../img/postac2S.png'
+postac2.src = './img/postac2S.png'
 
 let postac2Zwrot
 let postac2Ruch1P
@@ -292,11 +292,11 @@ const user2Draw = () => {
         clearInterval(postac2Ruch2L)
         postac2Ruch2L = null
         postac2Ruch1P = setInterval(() =>{
-            postac2.src = '../img/postac2P1.png'
+            postac2.src = './img/postac2P1.png'
         }, 256)
         setTimeout(() => {
             postac2Ruch2P = setInterval(() =>{
-            postac2.src = '../img/postac2P2.png'
+            postac2.src = './img/postac2P2.png'
         }, 256)
         }, 128)
         widthu2 = 2
@@ -307,21 +307,21 @@ const user2Draw = () => {
         clearInterval(postac2Ruch2P)
         postac2Ruch2P = null
         postac2Ruch1L = setInterval(() =>{
-            postac2.src = '../img/postac2L1.png'
+            postac2.src = './img/postac2L1.png'
         }, 256)
         setTimeout(() => {
             postac2Ruch2L= setInterval(() =>{
-            postac2.src = '../img/postac2L2.png'
+            postac2.src = './img/postac2L2.png'
         }, 256)
         }, 128)
         widthu2 = 2
         heightu2 = 4
     } else if (!isShottingUser2){
         if(lastKeyRu2){
-            postac2.src = '../img/postac2ShotP.png'
+            postac2.src = './img/postac2ShotP.png'
         }
         if(lastKeyLu2){
-            postac2.src = '../img/postac2ShotL.png'
+            postac2.src = './img/postac2ShotL.png'
         }
         widthu2 = 3
         heightu2 = 4
@@ -334,7 +334,7 @@ const user2Draw = () => {
         postac2Ruch1L = null
         clearInterval(postac2Ruch2L)
         postac2Ruch2L = null
-        postac2.src = '../img/postac2S.png'
+        postac2.src = './img/postac2S.png'
         widthu2 = 2
         heightu2 = 4
     }
@@ -360,7 +360,7 @@ document.addEventListener('keydown', (e) => {
             lastKeyLu2 = true
         }
         if(postac2Zwrot == 'spoczynek'){
-            postac2.src = '../img/postac2L1.png'
+            postac2.src = './img/postac2L1.png'
         }
         postac2Zwrot = false
     } else if (e.key === 'd') {
@@ -373,7 +373,7 @@ document.addEventListener('keydown', (e) => {
             lastKeyLu2 = false
         }
         if(postac2Zwrot == 'spoczynek'){
-            postac2.src = '../img/postac2P1.png'
+            postac2.src = './img/postac2P1.png'
         }
         postac2Zwrot = true
     }
@@ -479,10 +479,10 @@ function fallUser2Function() {
 
 // tworzenie platform
 let normalPlatform = new Image()
-normalPlatform.src = '../img/deseczka.png'
+normalPlatform.src = './img/deseczka.png'
 
 let specialPlatform = new Image()
-specialPlatform.src = '../img/stolik.png'
+specialPlatform.src = './img/stolik.png'
 
 function createNormalPlatform(x, y, w, h) {
     ctx.drawImage(normalPlatform, procentW() * x, (getHeight() - (getWidth() - (procentW() * y)) / 2) / 2, procentW() * w, (procentW()) * h);
@@ -862,57 +862,57 @@ let shotimg = new Image()
 
 function which(){
     if(directionShot == true && lastShots1 == 0){
-        shotimg.src = '../img/kupaL.png'
+        shotimg.src = './img/kupaL.png'
     } else if (directionShot == false && lastShots1 == 0){
-        shotimg.src = '../img/kupaP.png'
+        shotimg.src = './img/kupaP.png'
     } else if(directionShot == true && lastShots1 == 1){
-        shotimg.src = '../img/kupaLS.png'
+        shotimg.src = './img/kupaLS.png'
     } else if (directionShot == false && lastShots1 == 1){
-        shotimg.src = '../img/kupaPS.png'
+        shotimg.src = './img/kupaPS.png'
     }
 }
 function which2(){
     if(directionShots2 == true && lastShots2 == 0){
-        shotimg.src = '../img/kupaL.png'
+        shotimg.src = './img/kupaL.png'
     } else if (directionShots2 == false && lastShots2 == 0){
-        shotimg.src = '../img/kupaP.png'
+        shotimg.src = './img/kupaP.png'
     } else if(directionShots2 == true && lastShots2 == 1){
-        shotimg.src = '../img/kupaLS.png'
+        shotimg.src = './img/kupaLS.png'
     } else if (directionShots2 == false && lastShots2 == 1){
-        shotimg.src = '../img/kupaPS.png'
+        shotimg.src = './img/kupaPS.png'
     }
 }
 function which3(){
     if(directionShots3 == true && lastShots3 == 0){
-        shotimg.src = '../img/kupaL.png'
+        shotimg.src = './img/kupaL.png'
     } else if (directionShots3 == false && lastShots3 == 0){
-        shotimg.src = '../img/kupaP.png'
+        shotimg.src = './img/kupaP.png'
     } else if(directionShots3 == true && lastShots3 == 1){
-        shotimg.src = '../img/kupaLS.png'
+        shotimg.src = './img/kupaLS.png'
     } else if (directionShots3 == false && lastShots3 == 1){
-        shotimg.src = '../img/kupaPS.png'
+        shotimg.src = './img/kupaPS.png'
     }
 }
 function which4(){
     if(directionShots4 == true && lastShots4 == 0){
-        shotimg.src = '../img/kupaL.png'
+        shotimg.src = './img/kupaL.png'
     } else if (directionShots4 == false && lastShots4 == 0){
-        shotimg.src = '../img/kupaP.png'
+        shotimg.src = './img/kupaP.png'
     } else if(directionShots4 == true && lastShots4 == 1){
-        shotimg.src = '../img/kupaLS.png'
+        shotimg.src = './img/kupaLS.png'
     } else if (directionShots4 == false && lastShots4 == 1){
-        shotimg.src = '../img/kupaPS.png'
+        shotimg.src = './img/kupaPS.png'
     }
 }
 function which5(){
     if(directionShots5 == true && lastShots5 == 0){
-        shotimg.src = '../img/kupaL.png'
+        shotimg.src = './img/kupaL.png'
     } else if (directionShots5 == false && lastShots5 == 0){
-        shotimg.src = '../img/kupaP.png'
+        shotimg.src = './img/kupaP.png'
     } else if(directionShots5 == true && lastShots5 == 1){
-        shotimg.src = '../img/kupaLS.png'
+        shotimg.src = './img/kupaLS.png'
     } else if (directionShots5 == false && lastShots5 == 1){
-        shotimg.src = '../img/kupaPS.png'
+        shotimg.src = './img/kupaPS.png'
     }
 }
 
@@ -1125,57 +1125,57 @@ let shotimg2 = new Image()
 
 function whichu2(){
     if(directionShotu2 == true && lastShotu2s1 == 0){
-        shotimg2.src = '../img/kupaL.png'
+        shotimg2.src = './img/kupaL.png'
     } else if (directionShotu2 == false && lastShotu2s1 == 0){
-        shotimg2.src = '../img/kupaP.png'
+        shotimg2.src = './img/kupaP.png'
     } else if(directionShotu2 == true && lastShotu2s1 == 1){
-        shotimg2.src = '../img/kupaLS.png'
+        shotimg2.src = './img/kupaLS.png'
     } else if (directionShotu2 == false && lastShotu2s1 == 1){
-        shotimg2.src = '../img/kupaPS.png'
+        shotimg2.src = './img/kupaPS.png'
     }
 }
 function which2u2(){
     if(directionShotu2s2 == true && lastShotu2s2 == 0){
-        shotimg2.src = '../img/kupaL.png'
+        shotimg2.src = './img/kupaL.png'
     } else if (directionShotu2s2 == false && lastShotu2s2 == 0){
-        shotimg2.src = '../img/kupaP.png'
+        shotimg2.src = './img/kupaP.png'
     } else if(directionShotu2s2 == true && lastShotu2s2 == 1){
-        shotimg2.src = '../img/kupaLS.png'
+        shotimg2.src = './img/kupaLS.png'
     } else if (directionShotu2s2 == false && lastShotu2s2 == 1){
-        shotimg2.src = '../img/kupaPS.png'
+        shotimg2.src = './img/kupaPS.png'
     }
 }
 function which3u2(){
     if(directionShotu2s3 == true && lastShotu2s3 == 0){
-        shotimg2.src = '../img/kupaL.png'
+        shotimg2.src = './img/kupaL.png'
     } else if (directionShotu2s3 == false && lastShotu2s3 == 0){
-        shotimg2.src = '../img/kupaP.png'
+        shotimg2.src = './img/kupaP.png'
     } else if(directionShotu2s3 == true && lastShotu2s3 == 1){
-        shotimg2.src = '../img/kupaLS.png'
+        shotimg2.src = './img/kupaLS.png'
     } else if (directionShotu2s3 == false && lastShotu2s3 == 1){
-        shotimg2.src = '../img/kupaPS.png'
+        shotimg2.src = './img/kupaPS.png'
     }
 }
 function which4u2(){
     if(directionShotu2s4 == true && lastShotu2s4 == 0){
-        shotimg2.src = '../img/kupaL.png'
+        shotimg2.src = './img/kupaL.png'
     } else if (directionShotu2s4 == false && lastShotu2s4 == 0){
-        shotimg2.src = '../img/kupaP.png'
+        shotimg2.src = './img/kupaP.png'
     } else if(directionShotu2s4 == true && lastShotu2s4 == 1){
-        shotimg2.src = '../img/kupaLS.png'
+        shotimg2.src = './img/kupaLS.png'
     } else if (directionShotu2s4 == false && lastShotu2s4 == 1){
-        shotimg2.src = '../img/kupaPS.png'
+        shotimg2.src = './img/kupaPS.png'
     }
 }
 function which5u2(){
     if(directionShotu2s5 == true && lastShotu2s5 == 0){
-        shotimg2.src = '../img/kupaL.png'
+        shotimg2.src = './img/kupaL.png'
     } else if (directionShotu2s5 == false && lastShotu2s5 == 0){
-        shotimg2.src = '../img/kupaP.png'
+        shotimg2.src = './img/kupaP.png'
     } else if(directionShotu2s5 == true && lastShotu2s5 == 1){
-        shotimg2.src = '../img/kupaLS.png'
+        shotimg2.src = './img/kupaLS.png'
     } else if (directionShotu2s5 == false && lastShotu2s5 == 1){
-        shotimg2.src = '../img/kupaPS.png'
+        shotimg2.src = './img/kupaPS.png'
     }
 }
 
@@ -1536,25 +1536,25 @@ function shotCollisionUser2(){
 
 // tworzenie jedzonka
 let brokulimg = new Image()
-brokulimg.src = '../img/brokul.png'
+brokulimg.src = './img/brokul.png'
 
 let kebabimg = new Image()
-kebabimg.src = '../img/kebab.png'
+kebabimg.src = './img/kebab.png'
 
 let marchewkaimg = new Image()
-marchewkaimg.src = '../img/marchewka.png'
+marchewkaimg.src = './img/marchewka.png'
 
 let chipsyimg = new Image()
-chipsyimg.src = '../img/chipsy.png'
+chipsyimg.src = './img/chipsy.png'
 
 let chiliimg = new Image()
-chiliimg.src = '../img/chili.png'
+chiliimg.src = './img/chili.png'
 
 let pomidorimg = new Image()
-pomidorimg.src = '../img/pomidor.png'
+pomidorimg.src = './img/pomidor.png'
 
 let hamburgerimg = new Image()
-hamburgerimg.src = '../img/hamburger.png'
+hamburgerimg.src = './img/hamburger.png'
 
 function brokul(fx ,fy) {
     ctx.drawImage(brokulimg, procentW() * (fx - 1.5),(getHeight() - (getWidth() - (procentW() * (fy))) / 2)/2, procentW() * 3,procentW() * 3)
@@ -1646,10 +1646,10 @@ createFood()
 setInterval(createFood, 5000)
 
 let nabojZ = new Image()
-nabojZ.src = '../img/nabojZ.png'
+nabojZ.src = './img/nabojZ.png'
 
 let nabojS = new Image()
-nabojS.src = '../img/nabojS.png'
+nabojS.src = './img/nabojS.png'
 
 function drawAmunition(naboj, userx, usery, x){
     ctx.drawImage(naboj, procentW() * (userx + x),(getHeight() - (getWidth() - (procentW() * (usery - 10))) / 2)/2, procentW() * 0.6,procentW() * 1.5)
