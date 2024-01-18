@@ -6,13 +6,11 @@ const pressed = e => {
 
 
 window.addEventListener('keydown', e => {isPressed = true; pressed(e)})
-
 window.addEventListener('keyup', e => {isPressed = false; pressed(e)})
 
 const timeDisplay = document.querySelector('.clock p')
-let time
 const clook = () => {
-    time = new Date
+    const time = new Date
     timeDisplay.textContent = `${time.getHours()} : ${time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes()}`
     setTimeout(clook, 1000)
 }
@@ -22,15 +20,26 @@ const bateryDisplay = document.querySelector('.batery-display')
 const bateryDisplayValue = document.querySelector('.batery p')
 let bateryValue = bateryDisplayValue.textContent.replace('%', '')
 
+const trunOffConsole = () => {
+    if(document.querySelector('#canvas')){
+        document.querySelector('#canvas').remove()
+    }
+    displayConsole.classList.add('off')
+    menu.style.display = 'none'
+    game.style.display = 'none'
+}
+
 const batery = () => {
-    if(bateryValue == 0) return
+    if(bateryValue == 0){
+        trunOffConsole()
+        return
+    } 
     --bateryValue
     bateryDisplay.style.setProperty('--percents', `${bateryValue}%`)
     if(bateryValue <= 70) bateryDisplay.style.setProperty('--color', `#5acc4f`)
     if(bateryValue <= 50) bateryDisplay.style.setProperty('--color', `#c4de1d`)
     if(bateryValue <= 30) bateryDisplay.style.setProperty('--color', `#dea11d`)
     if(bateryValue <= 15) bateryDisplay.style.setProperty('--color', `#de1d1d`)
-    
     bateryDisplayValue.textContent = `${bateryValue}%`
 }
 
@@ -52,8 +61,8 @@ const start = () => {
 buttonStart.addEventListener('click', start)
 
 const progressBar = document.querySelector('.progressBar')
-const startButton = document.createElement('button')
-console.log(startButton);
+const startGame = document.createElement('button')
+console.log(startGame);
 let value = 0
 const biggerValue = () => {
     value++
@@ -68,8 +77,8 @@ const progress = () => {
     }else if(value == 100){
         setTimeout(() => {
             progressBar.style.display = 'none'; 
-            displayConsole.append(startButton); startButton.textContent = 'start'; 
-            startButton.classList.add('startButton')
+            displayConsole.append(startGame); startGame.textContent = 'start'; 
+            startGame.classList.add('startGame')
     },3000)
     }
 }
@@ -95,7 +104,6 @@ let nextSlideInterval
 game.addEventListener('dblclick', () => {
     console.log('witaj');
     displayConsole.classList.add('off')
-    menu.style.display = 'none'
     game.style.display = 'none'
     progressBar.style.display = 'block'
     setTimeout(progress, 10)
@@ -104,7 +112,7 @@ game.addEventListener('dblclick', () => {
 
 })
 
-startButton.addEventListener('click', function() {
+startGame.addEventListener('click', function() {
     sliderContainer.style.display = 'none'
     this.remove()
     const addCanvas = document.createElement('canvas')
@@ -115,6 +123,6 @@ startButton.addEventListener('click', function() {
     script.async = true;
     document.head.appendChild(script);
     displayConsole.classList.remove('off')
-    displayConsole.style.background = "url('/img/tlo.jpg')"
+    displayConsole.style.backgroundImage = "url('/img/tlo.jpg')"
 })
 

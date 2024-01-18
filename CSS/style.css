@@ -44,7 +44,7 @@ canvas{
     height: 75%;
 }
 .off{
-    background-image: url('/IMGS/off.png');
+    background-image: url('/IMGS/off.png') !important;
 }
 .on{
     display: block;
@@ -132,7 +132,7 @@ canvas{
 .game{
     width: 5vw;
     height: 5vw;
-    background-image: url('/IMGS/thepoop-miniaturka.png');
+    background-image: url('/IMGS/Slide2.png');
     background-size: cover;
     background-repeat: no-repeat;
     margin: 1vw;
@@ -157,7 +157,7 @@ canvas{
 }
 .slider-container {
     width: 46.7vw;
-    height: 30vw;
+    height: 28vw;
     overflow: hidden;
     display: none;
     position: absolute;
@@ -177,7 +177,7 @@ img {
     width: 100%;
     height: auto;
 }
-.startButton{
+.startGame{
     position: relative;
     top: 80%;
     left: 45%;
