@@ -70,6 +70,9 @@ const biggerValue = () => {
 const progress = () => {
     biggerValue()
     progressBar.style.setProperty('--percents', `${value}%`)
+    const percentsDisplay = document.querySelector('.procenty')
+    percentsDisplay.textContent = `${value}%`
+
     if(value <= 95){
         setTimeout(progress, 10)
     }else if(value < 100){
@@ -101,15 +104,16 @@ const updateSlider = () => {
 
 
 let nextSlideInterval
-game.addEventListener('dblclick', () => {
-    console.log('witaj');
+game.addEventListener('click', () => {
     displayConsole.classList.add('off')
     game.style.display = 'none'
-    progressBar.style.display = 'block'
+    progressBar.style.display = 'flex'
     setTimeout(progress, 10)
     nextSlideInterval = setInterval(nextSlide, 1000);
     sliderContainer.style.display = 'block'
-
+    const percentsDisplay = document.createElement('span')
+    percentsDisplay.classList.add('procenty')
+    progressBar.append(percentsDisplay)
 })
 
 startGame.addEventListener('click', function() {
