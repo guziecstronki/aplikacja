@@ -62,7 +62,6 @@ buttonStart.addEventListener('click', start)
 
 const progressBar = document.querySelector('.progressBar')
 const startGame = document.createElement('button')
-console.log(startGame);
 let value = 0
 const biggerValue = () => {
     value++
